@@ -1,0 +1,121 @@
+:root {
+    --bs-body-color: #e1e1e1;
+    --bs-body-bg: #190707;
+    --bs-primary: #c00000;
+    --bs-primary-rgb: 192, 0, 0;
+    --bs-warning: #640000;
+
+    --navbar-color: #130a0ade;
+}
+
+.timeline > li .timeline-image {
+    background-size: cover;
+}
+
+.team-member img {
+    width: 10rem;
+    height: 10rem;
+}
+
+.zmr-cont-pic-color {
+    background-image: url("/assets/bg001.jpg");
+    background-size: cover;
+}
+
+.modal-content {
+    background-color: #000000CC;
+}
+
+.timeline > li .timeline-image {
+    background-color: black;
+}
+
+.text-muted {
+    color: #c6afaf !important;
+}
+
+a {
+    color: var(--bs-primary);
+}
+
+a:hover {
+    color: #8f0000;
+    transition: 0.2s;
+}
+
+.page-section#play ol li {
+    margin-top: 2rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header.masthead {
+    background-color: #1907078a;
+    background-image: none;
+
+    min-height: 100vh;
+}
+
+header.masthead .masthead-subheading {
+    font-style: normal;
+}
+
+.masthead-description {
+    text-align: justify;
+}
+
+#mainNav .navbar-brand {
+    color: #ff0800;
+}
+
+.masthead-heading-smaller {
+    font-size: 3rem;
+}
+
+#mainNav {
+    background-color: var(--navbar-color);
+}
+
+#mainNav.navbar-shrink {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--navbar-color);
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: var(--bs-primary);
+}
+
+.btn-primary {
+    background-color: #ff0800;
+    border-color: #ff0800;
+    
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #c40700;
+    border-color: #a10500;
+}
+
+.btn-check:focus + .btn-primary, .btn-primary:focus {
+    background-color: #c40700;
+    border-color: #a10500;
+    box-shadow: 0 0 0 0.25rem rgba(255, 38, 38, 0.5);
+}
+
+.btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
+    background-color: #a10500;
+    border-color: #a10500;
+}
+
+.btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
+box-shadow: 0 0 0 0.25rem rgba(255, 38, 38, 0.5);
+}
+
+.btn-primary:disabled, .btn-primary.disabled {
+    background-color: #ff0800;
+    border-color: #ff0800;
+}

@@ -1,0 +1,248 @@
+---
+navigation:
+  - name: Play
+    href: '#play'
+  - name: Media
+    href: '#media'
+  - name: Team
+    href: '#team'
+  - name: Blog
+    href: 'blog/'
+
+media:
+  - name: Threads
+    subheader: Illustration
+    img: assets/pic001.jpg
+    id: media-1
+  - name: Explore
+    subheader: Illustration
+    img: assets/pic002.jpg
+    id: media-2
+  - name: Lorem
+    subheader: Ipsum
+    img: assets/pic003.jpg
+    id: media-3
+  - name: Lorem
+    subheader: Ipsum
+    img: assets/pic001.jpg
+    id: media-4
+  - name: Lorem
+    subheader: Ipsum
+    img: assets/pic002.jpg
+    id: media-5
+  - name: Lorem
+    subheader: Ipsum
+    img: assets/pic003.jpg
+    id: media-6
+
+downloads:
+  - name: Windows Installer
+    href: 'https://www.moddb.com/mods/zombie-master-reborn/downloads/zombie-master-reborn-beta-6-windows-installer'
+    icon: 'fa-windows'
+  - name: Windows ZIP
+    href: 'https://www.moddb.com/mods/zombie-master-reborn/downloads/zombie-master-reborn-beta-6-windows-zip'
+    icon: 'fa-windows'
+    description: 'Please use the installer if you are not familiar with installing Source mods.'
+  - name: Linux
+    href: 'https://www.moddb.com/mods/zombie-master-reborn/downloads/zombie-master-reborn-beta-6-linux'
+    icon: 'fa-linux'
+
+team:
+  - name: 4tony
+    title: '3D Artist' 
+    img: /assets/bg002.jpg
+  - name: Mehis
+    title: Programmer
+    img: /assets/bg001.jpg
+  - name: The Renegadist
+    title: Texture Artist
+    img: /assets/bg002.jpg
+  - name: Yeckoh
+    title: '3D Artist & Animator' 
+    img: /assets/bg003.jpg
+
+# Global data
+links:
+  - name: Discord
+    href: 'https://discord.com/invite/tZTUex3'
+    icon: fa-discord
+  - name: Steam group
+    href: 'https://steamcommunity.com/groups/zmreborn'
+    icon: fa-steam
+  - name: Github
+    href: 'https://github.com/zm-reborn'
+    icon: fa-github
+---
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Head -->
+    {% include "head.njk" %}
+    <body>
+        <!--
+        
+        Navigation
+        
+        -->
+        {% include "nav-bar.njk" %}
+        <!--
+        
+        Masthead
+
+        -->
+        <div class="zmr-cont-pic-color">
+            <header class="masthead">
+                <div class="container">
+                    <div class="masthead-heading text-uppercase">Zombie Master<br><div class="masthead-heading-smaller">Reborn</div></div>
+                    <div class="masthead-subheading">Your favorite FPS/RTS hybrid zombie shooter!</div>
+                    <p class="masthead-description">Zombie Master: Reborn combines FPS and RTS experience into one <i>terrifying</i> package. Each round a willing player is chosen to be the <i>Zombie Master</i>. ZM's job is to summon and command zombies, and kill the remaining survivors. The unlucky who didn't get picked, assume the role of a survivor. Their goal is to stay alive and complete the map objectives to survive another day!</p>
+                    <a class="btn btn-primary btn-xl text-uppercase" href="#play">Play</a>
+                </div>
+            </header>
+        </div>
+        <!--
+
+        Play
+
+        -->
+        <section class="page-section" id="play">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Play</h2>
+                </div>
+                <ol>
+                    <h3 class="section-heading">
+                        <li>
+                            Install <i>Source SDK Base 2013 Multiplayer</i> by <a href="steam://install/243750" target="_blank">clicking here</a>
+                        </li>
+                    </h3>
+                    <p class="text-muted">Alternatively, install it manually through Steam by going to Library -> Tools.</p>
+                    <h3 class="section-heading">
+                        <li>Download the game</li>
+                    </h3>
+                    <p class="text-muted">Make sure you install it in your <strong>Steam installation directory</strong>! Source mods cannot be installed in other library folders!</p>
+                </ol>
+                <div class="row text-center mt-5">
+                    {% for dl in downloads %}
+                            <div class="col-md-4">
+                                <a href="{{ dl.href }}" target="_blank">
+                                    <span class="fa-stack fa-4x">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab {{ dl.icon }} fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                                <h4 class="my-3">{{ dl.name }}</h4>
+                                <p class="text-muted">{{ dl.description }}</p>
+                            </div>
+                    {% endfor %}
+                </div>
+                <ol start="3">
+                    <h3 class="section-heading">
+                        <li>
+                            <a href="{{ links[0].href }}" target="_blank">Join our Discord group</a> for coordinated play sessions
+                        </li>
+                    </h3>
+                </ol>
+            </div>
+        </section>
+        <!--
+        
+        Media
+        
+        -->
+        <section class="page-section" id="media">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Media</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <div class="row">
+                    {%- for m in media %}
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                            <div class="portfolio-item">
+                                <a class="portfolio-link" data-bs-toggle="modal" href="#{{ m.id }}">
+                                    <img class="img-fluid" loading=lazy src="{{ m.img }}" alt="Media Picture" />
+                                </a>
+                                <!--<div class="portfolio-caption">
+                                    <div class="portfolio-caption-heading">{{ m.name }}</div>
+                                    <div class="portfolio-caption-subheading text-muted">{{ m.subheader }}</div>
+                                </div>-->
+                            </div>
+                        </div>
+                    {%- endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- 
+        
+        Team
+
+        -->
+        <section class="page-section" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">The Reborn Team</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <div class="row">
+                    {%- for member in team %}
+                        <div class="col-lg-4">
+                            <div class="team-member">
+                                <img class="mx-auto rounded-circle" src="{{ member.img }}" alt="Team member image" />
+                                <h4>{{ member.name }}</h4>
+                                <p class="text-muted">{{ member.title }}</p>
+                            </div>
+                        </div>
+                    {%- endfor %}
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+                </div>
+            </div>
+        </section>
+        <!--
+        
+        Footer
+        
+        -->
+        {% include "footer.njk" %}
+
+
+
+        <!--
+        
+        Modals
+        
+        -->
+        {%- for m in media %}
+            <div class="portfolio-modal modal fade" id="{{ m.id }}" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!--<div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>-->
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="modal-body">
+                                        <!-- Project details-->
+                                        <!--<h2 class="text-uppercase">{{ m.name }}</h2>
+                                        <p class="item-intro text-muted">{{ m.subheader }}</p>-->
+                                        <img class="img-fluid d-block mx-auto" src="{{ m.img }}" alt="" />
+                                        <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                            <i class="fas fa-times me-1"></i>
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <!--
+        
+        Scripts
+        
+        -->
+        {% include "body-end.njk" %}
+    </body>
+</html>
