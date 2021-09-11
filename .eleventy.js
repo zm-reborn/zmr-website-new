@@ -3,6 +3,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy({ "src/data/CNAME": "CNAME" });
+  eleventyConfig.addPassthroughCopy({ "src/data/.nojekyll": ".nojekyll" });
 
 
   const markdownIt = require("markdown-it");
