@@ -1,4 +1,6 @@
 ---
+eleventyExcludeFromCollections: true
+
 navigation:
   - name: Play
     href: '/#play'
@@ -31,17 +33,17 @@ articles:
             <h3 class="section-subheading text-muted">Read about it here!</h3>
         </div>
         <ul class="timeline">
-            {% for article in articles %}
-                <li>
-                    <div class="timeline-image" style="background-image: url({{ article.image }})"></div>
+            {% for article in collections.all | reverse %}
+                <li><a href="{{ article.url }}">
+                    <div class="timeline-image" style="background-image: url({{ article.data.image }})"></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>{{ article.name }}</h4>
-                            <h4 class="subheading">{{ article.date }}</h4>
+                            <h4>{{ article.data.title }}</h4>
+                            <h4 class="subheading">{{ article.data.date.toDateString() }}</h4>
                         </div>
-                        <div class="timeline-body"><p class="text-muted">{{ article.description }}</p></div>
+                        <div class="timeline-body"><p class="text-muted">{{ article.data.description }}</p></div>
                     </div>
-                </li>
+                </a></li>
             {% endfor %}
         </ul>
     </div>
