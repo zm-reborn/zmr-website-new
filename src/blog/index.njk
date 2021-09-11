@@ -7,46 +7,37 @@ navigation:
   - name: Blog
     href: '#blog'
     current: true
-
-articles:
-  - name: Beta 6
-    date: 2021
-    image: /assets/bg001.jpg
-    description: Lorem ipsum lorem ipsum lorem ipsum lorem ipsum.
-  - name: Lorem Ipsum
-    date: 2020
-    image: /assets/bg002.jpg
-    description: Lorem ipsum lorem ipsum lorem ipsum lorem ipsum.
-  - name: Lorem Ipsum
-    date: 2020
-    image: /assets/bg003.jpg
-    description: Lorem ipsum lorem ipsum lorem ipsum lorem ipsum.
 ---
-{% include "head.njk" %}
-<body>
-{% include "nav-bar.njk" %}
+<!DOCTYPE html>
+<html lang="en">
+    {% include "head.njk" %}
+    <body>
+        {% include "nav-bar.njk" %}
 
-<section class="page-section" id="blog">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Blog</h2>
-            <h3 class="section-subheading text-muted">Read about it here!</h3>
-        </div>
-        <ul class="timeline">
-            {% for article in collections.all | reverse %}
-                <li><a href="{{ article.url }}">
-                    <div class="timeline-image" style="background-image: url({{ article.data.image }})"></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>{{ article.data.title }}</h4>
-                            <h4 class="subheading">{{ article.data.date.toDateString() }}</h4>
-                        </div>
-                        <div class="timeline-body"><p class="text-muted">{{ article.data.description }}</p></div>
-                    </div>
-                </a></li>
-            {% endfor %}
-        </ul>
-    </div>
-</section>
-{% include "body-end.njk" %}
-</body>
+        <section class="page-section" id="blog">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Blog</h2>
+                    <h3 class="section-subheading text-muted">Read about it here!</h3>
+                </div>
+                <ul class="timeline">
+                    {% for article in collections.all | reverse %}
+                        <li><a href="{{ article.url }}">
+                            <div class="timeline-image" style="background-image: url({{ article.data.image }})"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>{{ article.data.title }}</h4>
+                                    <h4 class="subheading">{{ article.data.date.toDateString() }}</h4>
+                                </div>
+                                <div class="timeline-body"><p class="text-muted">{{ article.data.description }}</p></div>
+                            </div>
+                        </a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% include "footer.njk" %}
+
+        {% include "body-end.njk" %}
+    </body>
+</html>
