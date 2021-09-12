@@ -6,6 +6,9 @@
     --bs-warning: #640000;
 
     --navbar-color: #130a0ade;
+
+    --link-dark-color: #423737;
+    --link-dark-color-hover: #665454;
 }
 
 .timeline > li .timeline-image {
@@ -14,6 +17,14 @@
 
 .blog-content {
     margin-bottom: 5rem;
+}
+
+.link-dark {
+    color: var(--link-dark-color);
+}
+
+.link-dark:hover {
+    color: var(--link-dark-color-hover);
 }
 
 .team-member img {

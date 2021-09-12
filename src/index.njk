@@ -50,7 +50,10 @@ downloads:
     icon: 'fa-linux'
 
 team:
-  - name: 4tony
+  - name: boxed
+    title: 'Composer' 
+    img: /assets/bg001.jpg
+  - name: Four Tony
     title: '3D Artist' 
     img: /assets/bg002.jpg
   - name: Mehis
@@ -65,6 +68,37 @@ team:
   - name: Yeckoh
     title: '3D Artist & Animator' 
     img: /assets/bg003.jpg
+
+contributors:
+  - Asg_alligator
+  - Blixibon
+  - brendaym
+  - BurntCornFlakes
+  - Fa
+  - Forrest Mark X
+  - Kud
+  - Reborn
+  - Sage J. Fox
+
+thanks_to:
+  - Biohazard
+  - Game Zombie
+  - Joshua Ashton
+  - Keyb0ard
+  - KnechtRuprecht
+  - Marphy Black
+  - MaxOfS2D
+  - Noodum
+  - PazerOP
+  - '-Rusty-'
+  - ryandmaclean
+  - SAM61
+  - Sandern
+  - SCell555
+  - Tony Sergi
+  - tgnottingham
+  - wouterpleizier
+  - Yogensia
 
 # Global data
 links:
@@ -156,7 +190,6 @@ links:
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Media</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <div class="row">
                     {%- for m in media %}
@@ -184,10 +217,10 @@ links:
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">The Reborn Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted"></h3>
                 </div>
                 <div class="row">
-                    {%- for member in team %}
+                    {%- for member in team | sort %}
                         <div class="col-sm-4">
                             <div class="team-member">
                                 <img class="mx-auto rounded-circle" src="{{ member.img }}" alt="Team member image" />
@@ -197,8 +230,28 @@ links:
                         </div>
                     {%- endfor %}
                 </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+                <div class="sub-section">
+                    <h3 class="text-center text-uppercase">The Contributors</h3>
+                    <h3 class="section-subheading text-muted text-center">The people who have directly contributed to the project. It wouldn't have been possible without these guys!</h3>
+                    <div class="row">
+                        {% for contributor in contributors | sort %}
+                            <div class="col-sm-4">
+                                <p class="text-center">
+                                    {{ contributor }}
+                                </p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="sub-section">
+                    <h4 class="text-center text-uppercase">Thanks To</h4>
+                    <h3 class="section-subheading text-muted text-center">The people who have helped indirectly, or released their work to the public.</h3>
+                    <div class="mx-4 text-muted">
+                        {% set comma = joiner() %}
+                        {%- for person in thanks_to | sort -%}
+                            {{ comma() }} {{ person }}
+                        {%- endfor -%}
+                    </div>
                 </div>
             </div>
         </section>
