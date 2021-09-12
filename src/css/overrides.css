@@ -80,13 +80,14 @@ header.masthead .masthead-subheading {
 
 #mainNav {
     background-color: var(--navbar-color);
+    transition-property: background-color, padding-top, padding-bottom;
 }
 
 /* Hide background at top if no hamburger menu */
 @media (min-width: 992px) {
     #mainNav {
         background: none;
-        transition: 0.2s;
+        transition-duration: 0.2s;
     }
 }
 
@@ -94,7 +95,7 @@ header.masthead .masthead-subheading {
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: var(--navbar-color);
-    transition: 0.2s;
+    transition-duration: 0.2s;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
