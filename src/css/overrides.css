@@ -21,9 +21,11 @@
     height: 10rem;
 }
 
-.zmr-cont-pic-color {
+header.masthead {
     background-image: url("/assets/bg001.jpg");
     background-size: cover;
+
+    min-height: 100vh;
 }
 
 .modal-content {
@@ -53,13 +55,6 @@ a:hover {
 
 html {
     scroll-behavior: smooth;
-}
-
-header.masthead {
-    background-color: #1907078a;
-    background-image: none;
-
-    min-height: 100vh;
 }
 
 header.masthead .masthead-subheading {
