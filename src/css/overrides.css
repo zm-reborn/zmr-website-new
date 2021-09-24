@@ -28,6 +28,33 @@
     margin-bottom: 4.5rem;
 }
 
+.blog-content * {
+    max-width: 100%;
+}
+
+.blog-content img {
+    width: 720px;
+
+    display: block;
+    margin: 0 auto;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+    margin-top: 3.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.blog-content iframe {
+    display: block;
+    margin: 0 auto;
+}
+
 .link-dark:hover {
     color: var(--link-dark-color-hover);
 }
