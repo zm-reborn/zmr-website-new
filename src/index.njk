@@ -10,37 +10,6 @@ navigation:
     href: '#team'
   - name: Blog
     href: 'blog/'
-
-team:
-  - name: boxed
-    title: 'Composer' 
-    img: /assets/bg001.jpg
-  - name: Four Tony
-    title: '3D Artist' 
-    img: /assets/bg002.jpg
-  - name: Mehis
-    title: Creator, Programmer
-    img: /assets/bg001.jpg
-  - name: That One Guy
-    title: 'Sound Designer' 
-    img: /assets/bg003.jpg
-  - name: The Renegadist
-    title: Lead Designer
-    img: /assets/bg002.jpg
-  - name: Yeckoh
-    title: '3D Artist & Animator' 
-    img: /assets/bg003.jpg
-
-contributors:
-  - Asg_alligator
-  - Blixibon
-  - brendaym
-  - BurntCornFlakes
-  - Fa
-  - Forrest Mark X
-  - Kud
-  - Reborn
-  - Sage J. Fox
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -145,30 +114,29 @@ contributors:
         -->
         <section class="page-section" id="team">
             <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">The Reborn Team</h2>
-                    <h3 class="section-subheading text-muted"></h3>
-                </div>
-                <div class="row">
-                    {%- for member in team | sort %}
-                        <div class="col-sm-4">
-                            <div class="team-member">
-                                <img class="mx-auto rounded-circle" src="{{ member.img }}" alt="Team member image" />
-                                <h4>{{ member.name }}</h4>
-                                <p class="text-muted">{{ member.title }}</p>
+                <h2 class="section-heading text-uppercase text-center">The Reborn Team</h2>
+                <h3 class="section-subheading text-muted text-center"></h3>
+                <div class="sub-section">
+                    <div class="row">
+                        {%- for member in developers | sort %}
+                            <div class="col-sm-4">
+                                <div class="team-member">
+                                    <!--<img class="mx-auto rounded-circle" src="{{ member.img }}" alt="Team member image" />-->
+                                    <h4>{{ member.name }}</h4>
+                                    <p class="text-muted">{{ member.title }}</p>
+                                </div>
                             </div>
-                        </div>
-                    {%- endfor %}
+                        {%- endfor %}
+                    </div>
                 </div>
                 <div class="sub-section">
                     <h3 class="text-center text-uppercase">The Contributors</h3>
                     <h3 class="section-subheading text-muted text-center">The people who have directly contributed to the project. It wouldn't have been possible without these guys!</h3>
                     <div class="row">
                         {% for contributor in contributors | sort %}
-                            <div class="col-sm-4">
-                                <p class="text-center">
-                                    {{ contributor }}
-                                </p>
+                            <div class="col-sm-3 text-center mb-3">
+                                <h5 class="mb-0">{{ contributor.name }}</h5>
+                                <p class="text-muted">{{ contributor.title }}</p>
                             </div>
                         {% endfor %}
                     </div>
