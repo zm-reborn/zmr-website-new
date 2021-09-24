@@ -8,6 +8,8 @@ const markdownItVideo = require("markdown-it-video", {
   prezi: { width: 550, height: 400 }
 });
 
+const markdownItLinkAttributes = require("markdown-it-link-attributes");
+
 
 module.exports = function (eleventyConfig) {
 
@@ -22,7 +24,14 @@ module.exports = function (eleventyConfig) {
   // Configure markdown
   const markdownLib = markdownIt({
     html: true
-  }).use(markdownItVideo);
+  })
+    .use(markdownItVideo)
+    .use(markdownItLinkAttributes, {
+      attrs: {
+        target: "_blank"
+      }
+    });
+
   eleventyConfig.setLibrary("md", markdownLib);
 
 
