@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Discord",
+        "href": "https://discord.com/invite/tZTUex3",
+        "icon": "fa-discord"
+    },
+    {
+        "name": "Steam group",
+        "href": "https://steamcommunity.com/groups/zmreborn",
+        "icon": "fa-steam"
+    },
+    {
+        "name": "Github",
+        "href": "https://github.com/zm-reborn",
+        "icon": "fa-github"
+    }
+]

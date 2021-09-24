@@ -3,9 +3,9 @@
         <div class="row align-items-center">
             <div class="col-lg-4 text-lg-start text-muted">Copyright &copy; ZM Reborn Team 2021</div>
             <div class="col-lg-4 my-3 my-lg-0">
-                <a class="btn btn-dark btn-social mx-2" href="https://discord.com/invite/tZTUex3"><i class="fab fa-discord"></i></a>
-                <a class="btn btn-dark btn-social mx-2" href="https://steamcommunity.com/groups/zmreborn" target="_blank"><i class="fab fa-steam"></i></a>
-                <a class="btn btn-dark btn-social mx-2" href="https://github.com/zm-reborn" target="_blank"><i class="fab fa-github"></i></a>
+                {% for link in socialLinks %}
+                    <a class="btn btn-dark btn-social mx-2" href="{{ link.href }}" alt="{{ link.name }}" target="_blank"><i class="fab {{ link.icon }}"></i></a>
+                {% endfor %}
             </div>
             <div class="col-lg-4 text-lg-end">
                 <a class="link-dark text-decoration-none me-3" href="https://github.com/zm-reborn/zmr-website-new" target="_blank">Source Code</a>
