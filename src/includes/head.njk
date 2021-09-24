@@ -3,13 +3,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- SEO -->
-    <meta name="title" content="Zombie Master: Reborn" />
-    <meta name="description" content="Zombie Master: Reborn, your favorite FPS/RTS hybrid! Download and play now." />
+    <meta name="title" content="{{ title or site.title }}" />
+    <meta name="description" content="{{ description or site.description }}" />
     <meta name="keywords" content="zombie, master, reborn, half-life, hl2, modification, mod" />
     <meta name="author" content="ZM Reborn Team" />
-    <meta name="thumbnail" content="https://zombiemaster.dev/assets/bg001.jpg" />
+    <meta name="thumbnail" content="{{ site.url }}/assets/og_image.jpg" />
 
-    <title>{{ title or "Zombie Master: Reborn" }}</title>
+    <!-- OpenGraph -->
+    <meta property="og:url" content="{{ site.url }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ title or site.title }}" />
+    <meta property="og:description" content="{{ description or site.description }}" />
+    <meta property="og:image" content="{{ site.url }}/assets/og_image.jpg" />
+
+    <title>{{ title or site.title }}</title>
 
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="/assets/icon.png" />
