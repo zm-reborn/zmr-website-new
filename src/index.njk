@@ -79,27 +79,6 @@ contributors:
   - Kud
   - Reborn
   - Sage J. Fox
-
-thanks_to:
-  - Biohazard
-  - Game Zombie
-  - Joshua Ashton
-  - Keyb0ard
-  - KnechtRuprecht
-  - Marphy Black
-  - MaxOfS2D
-  - Noodum
-  - PazerOP
-  - '-Rusty-'
-  - ryandmaclean
-  - SAM61
-  - Sandern
-  - SCell555
-  - Tony Sergi
-  - tgnottingham
-  - wouterpleizier
-  - Yogensia
-
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -234,10 +213,10 @@ thanks_to:
                 </div>
                 <div class="sub-section">
                     <h4 class="text-center text-uppercase">Thanks To</h4>
-                    <h3 class="section-subheading text-muted text-center">The people who have helped indirectly, or released their work to the public.</h3>
-                    <div class="mx-4 text-muted">
+                    <h3 class="section-subheading text-muted text-center">The people who have helped indirectly, released their work to the public or are just plain cool.</h3>
+                    <div class="mx-4">
                         {% set comma = joiner() %}
-                        {%- for person in thanks_to | sort -%}
+                        {%- for person in thanksTo | sort -%}
                             {{ comma() }} {{ person }}
                         {%- endfor -%}
                     </div>
