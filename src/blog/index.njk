@@ -22,16 +22,18 @@ navigation:
                 </div>
                 <ul class="timeline">
                     {% for article in collections.all | reverse %}
-                        <li><a href="{{ article.url }}">
+                        <li>
                             <div class="timeline-image" style="background-image: url({{ article.data.image }})"></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>{{ article.data.title }}</h4>
-                                    <h4 class="subheading">{{ article.data.date.toDateString() }}</h4>
+                                    <a href="{{ article.url }}">
+                                        <h4>{{ article.data.title }}</h4>
+                                        <h4 class="subheading">{{ article.data.date.toDateString() }}</h4>
+                                    <a/>
                                 </div>
                                 <div class="timeline-body"><p class="text-muted">{{ article.data.description }}</p></div>
                             </div>
-                        </a></li>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>
