@@ -16,8 +16,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
-  eleventyConfig.addPassthroughCopy({ "src/data/CNAME": "CNAME" });
-  eleventyConfig.addPassthroughCopy({ "src/data/.nojekyll": ".nojekyll" });
+  eleventyConfig.addPassthroughCopy({ "src/misc/CNAME": "CNAME" });
+  eleventyConfig.addPassthroughCopy({ "src/misc/.nojekyll": ".nojekyll" });
 
 
 
