@@ -10,6 +10,8 @@ const markdownItVideo = require("markdown-it-video", {
 
 const markdownItLinkAttributes = require("markdown-it-link-attributes");
 
+const purgeCssPlugin = require("eleventy-plugin-purgecss");
+
 
 module.exports = function (eleventyConfig) {
 
@@ -34,22 +36,28 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setLibrary("md", markdownLib);
 
+  if (process.env.ELEVENTY_ENV !== "development") {
+    // HTML minifier
+    eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+      // Eleventy 1.0+: use this.inputPath and this.outputPath instead
+      if (outputPath && outputPath.endsWith(".html")) {
+        let minified = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true
+        });
+        return minified;
+      }
 
-  // HTML minifier
-  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    // Eleventy 1.0+: use this.inputPath and this.outputPath instead
-    if (outputPath && outputPath.endsWith(".html")) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true
-      });
-      return minified;
-    }
+      return content;
+    });
 
-    return content;
-  });
-
+    // Purge unused CSS.
+    eleventyConfig.addPlugin(purgeCssPlugin, {
+      config: "./purgecss.config.js",
+      quiet: false
+    });
+  }
 
   return {
     dir: {
