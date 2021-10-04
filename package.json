@@ -8,6 +8,7 @@
     "build": "run-s clean build:eleventy",
     "serve:eleventy": "eleventy --serve",
     "serve": "cross-env ELEVENTY_ENV=development run-s clean serve:eleventy",
+    "serve:final": "cross-env ELEVENTY_ENV=production run-s clean serve:eleventy",
     "clean": "rimraf _site"
   },
   "repository": {
