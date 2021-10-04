@@ -28,5 +28,20 @@
         "name" : "Main menu",
         "img" : "assets/pic006.jpg",
         "id" : "media-6"
+    },
+    {
+        "name" : "Weapon render - Shotgun",
+        "img" : "assets/pic009.jpg",
+        "id" : "media-7"
+    },
+    {
+        "name" : "Weapon render - Glock",
+        "img" : "assets/pic010.jpg",
+        "id" : "media-8"
+    },
+    {
+        "name" : "Weapon render - Rifle",
+        "img" : "assets/pic011.jpg",
+        "id" : "media-9"
     }
 ]
