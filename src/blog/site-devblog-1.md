@@ -1,6 +1,4 @@
 ---
-layout: blog-post.njk
-
 title: 'Site Dev Blog #1'
 description: First look at our new zombiemaster.dev-website.
 date: 2021-09-24

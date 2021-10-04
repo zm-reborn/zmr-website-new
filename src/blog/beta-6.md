@@ -1,6 +1,4 @@
 ---
-layout: blog-post.njk
-
 title: 'Beta 6'
 description: Beta 6 is here! The biggest update yet. New weapons, new models and so much more!
 date: 2021-06-12
