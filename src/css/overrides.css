@@ -181,3 +181,9 @@ box-shadow: 0 0 0 0.25rem rgba(255, 38, 38, 0.5);
 .portfolio-modal .modal-content, .modal-dialog {
     height: 100%;
 }
+
+.article-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
