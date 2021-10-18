@@ -36,7 +36,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setLibrary("md", markdownLib);
 
-  if (process.env.ELEVENTY_ENV !== "development") {
+  if (process.env.NODE_ENV !== "development") {
     // HTML minifier
     eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
       // Eleventy 1.0+: use this.inputPath and this.outputPath instead
