@@ -22,6 +22,20 @@ navigation:
                     <h2 class="section-heading text-uppercase">Blog</h2>
                     <h3 class="section-subheading text-muted">Read about it here!</h3>
                 </div>
+                <div class="row">
+                    {%- for article in collections.all | reverse %}
+                        <div class="col-sm-6">
+                            <img class="" src="{{ article.data.image }}" style="max-width: 100%"/>
+                            <a href="{{ article.url }}">
+                                <h4>{{ article.data.title }}</h4>
+                                <h4 class="subheading">{{ article.data.date.toDateString() }}</h4>
+                            <a/>
+                            <p class="text-muted">{{ article.data.description }}</p>
+                        </div>
+                    {%- endfor %}
+                </div>
+                <!-- old -->
+                <!--
                 <ul class="timeline">
                     {% for article in collections.all | reverse %}
                         <li>
@@ -38,6 +52,7 @@ navigation:
                         </li>
                     {% endfor %}
                 </ul>
+                -->
             </div>
         </section>
         {% include "footer.njk" %}
