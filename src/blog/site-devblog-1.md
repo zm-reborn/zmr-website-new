@@ -2,7 +2,7 @@
 title: 'Site Dev Blog #1'
 description: First look at our new zombiemaster.dev-website.
 date: 2021-09-24
-image: /assets/bg001.jpg
+image: /assets/bg003.jpg
 ---
 Welcome to the new website! This site is made possible with [Github Pages](https://pages.github.com/). Github Pages is a static web hosting service that lets you host your website from a Github repository. Yes, this website's source code can be found [on its Github repository](https://github.com/zm-reborn/zmr-website-new). Our previous website wasn't particularly good. I essentially made it in a week for a school assignment and then completely forgot about it. It was pure, non-optimized and terrible HTML.
 
