@@ -1,5 +1,6 @@
 const htmlmin = require("html-minifier");
 const markdownIt = require("markdown-it");
+const moment = require("moment");
 
 const markdownItVideo = require("markdown-it-video", {
   youtube: { width: 640, height: 390 },
@@ -20,7 +21,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy({ "src/misc/CNAME": "CNAME" });
   eleventyConfig.addPassthroughCopy({ "src/misc/.nojekyll": ".nojekyll" });
+  eleventyConfig.addPassthroughCopy({ "src/misc/robots.txt": "robots.txt" });
 
+  eleventyConfig.addShortcode("toisodate", function(date) {
+    return moment(date).format("YYYY-MM-DD");
+  });
 
 
   // Configure markdown

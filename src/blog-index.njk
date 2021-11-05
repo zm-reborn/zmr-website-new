@@ -1,7 +1,6 @@
 ---
-eleventyExcludeFromCollections: true
-
 permalink: /blog/
+date: 2021-09-24
 
 navigation:
   - name: Play
@@ -23,7 +22,7 @@ navigation:
                     <h3 class="section-subheading text-muted">Read about it here!</h3>
                 </div>
                 <div class="row">
-                    {%- for article in collections.all | reverse %}
+                    {%- for article in collections.post | reverse %}
                         <div class="col-sm-6">
                             <a href="{{ article.url }}">
                                 <img class="article-img" src="{{ article.data.image }}"/>
@@ -37,7 +36,7 @@ navigation:
                 <!-- old -->
                 <!--
                 <ul class="timeline">
-                    {% for article in collections.all | reverse %}
+                    {% for article in collections.post | reverse %}
                         <li>
                             <div class="timeline-image" style="background-image: url({{ article.data.image }})"></div>
                             <div class="timeline-panel">
