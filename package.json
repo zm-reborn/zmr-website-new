@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/zm-reborn/zmr-website-new#readme",
   "dependencies": {
-    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy": "^2.0.0",
     "cross-env": "^7.0.3",
     "eleventy-plugin-purgecss": "^0.2.1",
     "html-minifier": "^4.0.0",

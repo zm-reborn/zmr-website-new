@@ -13,7 +13,9 @@ const markdownItLinkAttributes = require("markdown-it-link-attributes");
 
 const purgeCssPlugin = require("eleventy-plugin-purgecss");
 
-
+/**
+ * @param {import('@11ty/eleventy').UserConfig} eleventyConfig 
+ */
 module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/assets");
