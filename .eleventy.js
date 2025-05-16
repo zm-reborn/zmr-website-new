@@ -1,22 +1,18 @@
-const htmlmin = require("html-minifier");
-const markdownIt = require("markdown-it");
-const moment = require("moment");
-
-const markdownItVideo = require("markdown-it-video", {
-  youtube: { width: 640, height: 390 },
-  vimeo: { width: 500, height: 281 },
-  vine: { width: 600, height: 600, embed: 'simple' },
-  prezi: { width: 550, height: 400 }
-});
-
-const markdownItLinkAttributes = require("markdown-it-link-attributes");
-
-const purgeCssPlugin = require("eleventy-plugin-purgecss");
+import esbuild from "esbuild"
+import { promises as fs } from "fs"
+import { minify } from "html-minifier"
+import markdownIt from "markdown-it"
+import markdownItVideo from "markdown-it-video"
+import markdownItLinkAttributes from "markdown-it-link-attributes"
+import moment from "moment"
+import { PurgeCSS } from "purgecss"
 
 /**
  * @param {import('@11ty/eleventy').UserConfig} eleventyConfig 
  */
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
+
+  const isDevelopment = process.env.NODE_ENV !== "production"
 
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");
@@ -25,7 +21,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/misc/.nojekyll": ".nojekyll" });
   eleventyConfig.addPassthroughCopy({ "src/misc/robots.txt": "robots.txt" });
 
-  eleventyConfig.addShortcode("toisodate", function(date) {
+  eleventyConfig.addShortcode("toisodate", function (date) {
     return moment(date).format("YYYY-MM-DD");
   });
 
@@ -34,7 +30,12 @@ module.exports = function (eleventyConfig) {
   const markdownLib = markdownIt({
     html: true
   })
-    .use(markdownItVideo)
+    .use(markdownItVideo, {
+      youtube: { width: 640, height: 390 },
+      vimeo: { width: 500, height: 281 },
+      vine: { width: 600, height: 600, embed: 'simple' },
+      prezi: { width: 550, height: 400 }
+    })
     .use(markdownItLinkAttributes, {
       attrs: {
         target: "_blank"
@@ -43,29 +44,43 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setLibrary("md", markdownLib);
 
-  if (process.env.NODE_ENV !== "development") {
+  if (!isDevelopment) {
     // HTML minifier
     eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-      // Eleventy 1.0+: use this.inputPath and this.outputPath instead
       if (outputPath && outputPath.endsWith(".html")) {
-        let minified = htmlmin.minify(content, {
+        return minify(content, {
           useShortDoctype: true,
           removeComments: true,
           collapseWhitespace: true
         });
-        return minified;
       }
 
       return content;
     });
-
-    // Purge unused CSS.
-    eleventyConfig.addPlugin(purgeCssPlugin, {
-      config: "./purgecss.config.js",
-      quiet: false
-    });
   }
 
+  eleventyConfig.on('afterBuild', async () => {
+    await esbuild.build({
+      entryPoints: ['src/css/overrides.css', 'src/css/styles.css', 'src/js/scripts.js'],
+      outdir: '_site',
+      minify: !isDevelopment,
+      sourcemap: isDevelopment
+    })
+
+    if (!isDevelopment) {
+      console.log('Purging CSS...')
+
+      const purgeResult = await new PurgeCSS().purge({
+        content: ["./_site/**/*.html"],
+        css: ["./_site/**/*.css"],
+        safelist: ["navbar-shrink"]
+      })
+      await Promise.all(purgeResult.map(res => {
+        console.log('Overwriting purged file', res.file)
+        fs.writeFile(res.file, res.css)
+      }))
+    }
+  })
   return {
     dir: {
       input: "src",
@@ -75,4 +90,4 @@ module.exports = function (eleventyConfig) {
       data: "data"
     }
   }
-};
+}

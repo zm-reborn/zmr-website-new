@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build:eleventy": "eleventy",
     "build": "cross-env NODE_ENV=production run-s clean build:eleventy",
@@ -21,15 +22,16 @@
     "url": "https://github.com/zm-reborn/zmr-website-new/issues"
   },
   "homepage": "https://github.com/zm-reborn/zmr-website-new#readme",
-  "dependencies": {
+  "devDependencies": {
     "@11ty/eleventy": "^3.1.0",
     "cross-env": "^7.0.3",
-    "eleventy-plugin-purgecss": "^0.5.0",
+    "esbuild": "^0.25.4",
     "html-minifier": "^4.0.0",
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-video": "^0.6.3",
     "moment": "^2.30.1",
     "npm-run-all": "^4.1.5",
+    "purgecss": "^7.0.2",
     "rimraf": "^6.0.1"
   }
 }

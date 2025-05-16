@@ -1,5 +1,5 @@
-const process = require("process");
+import process from "process";
 
-module.exports = {
+export default {
   url: process.env.NODE_ENV === "development" ? "http://localhost:8080" : "https://zombiemaster.dev"
 };
