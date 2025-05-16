@@ -22,137 +22,140 @@ navigation:
         
         -->
         {% include "nav-bar.njk" %}
-        <!--
-        
-        Masthead
 
-        -->
-        <header class="masthead">
-            <div class="container">
-                <div class="masthead-heading text-uppercase">Zombie Master<br><div class="masthead-heading-smaller">Reborn</div></div>
-                <div class="masthead-subheading">Your favorite FPS/RTS hybrid zombie shooter!</div>
-                <p class="masthead-description">Zombie Master: Reborn combines the FPS and RTS experience into one <i>terrifying</i> package. Each round a player is chosen to be the <i>Zombie Master</i>. The ZM's job is to summon and command zombies, and kill the survivors. The unlucky who didn't get picked, assume the role of a survivor. Their goal is to stay alive and complete the map objectives to survive another day!</p>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#play">Play</a>
-            </div>
-        </header>
-        <!--
+        <div data-bs-spy="scroll" data-bs-target="#mainNav">
+            <!--
+            
+            Masthead
 
-        Play
+            -->
+            <header class="masthead">
+                <div class="container">
+                    <div class="masthead-heading text-uppercase">Zombie Master<br><div class="masthead-heading-smaller">Reborn</div></div>
+                    <div class="masthead-subheading">Your favorite FPS/RTS hybrid zombie shooter!</div>
+                    <p class="masthead-description">Zombie Master: Reborn combines the FPS and RTS experience into one <i>terrifying</i> package. Each round a player is chosen to be the <i>Zombie Master</i>. The ZM's job is to summon and command zombies, and kill the survivors. The unlucky who didn't get picked, assume the role of a survivor. Their goal is to stay alive and complete the map objectives to survive another day!</p>
+                    <a class="btn btn-primary btn-xl text-uppercase" href="#play">Play</a>
+                </div>
+            </header>
+            <!--
 
-        -->
-        <section class="page-section" id="play">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Play</h2>
-                </div>
-                <ol>
-                    <h3 class="section-heading">
-                        <li>
-                            Install <i>Source SDK Base 2013 Multiplayer</i> by <a href="steam://install/243750" target="_blank">clicking here</a>
-                        </li>
-                    </h3>
-                    <p class="text-muted">Alternatively, install it manually through Steam by going to Library -> Tools.</p>
-                    <h3 class="section-heading">
-                        <li>Download the game</li>
-                    </h3>
-                    <p class="text-muted">Make sure you install it in your <strong>Steam installation directory</strong>! Source mods cannot be installed in other library folders!</p>
-                </ol>
-                <div class="row text-center mt-5">
-                    {% for dl in downloads %}
-                            <div class="col-md-4">
-                                <a href="{{ dl.href }}" target="_blank">
-                                    <span class="fa-stack fa-4x">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab {{ dl.icon }} fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <h4 class="my-3">{{ dl.name }}</h4>
-                                <p class="text-muted">{{ dl.description }}</p>
-                            </div>
-                    {% endfor %}
-                </div>
-                <ol start="3">
-                    <h3 class="section-heading">
-                        <li>
-                            <a href="{{ socialLinks[0].href }}" target="_blank">Join our Discord group</a> to stay up to date with the community, news, and coordinated play sessions
-                        </li>
-                    </h3>
-                </ol>
-            </div>
-        </section>
-        <!--
-        
-        Media
-        
-        -->
-        <section class="page-section" id="media">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Media</h2>
-                </div>
-                <div class="row">
-                    {%- for m in media %}
-                        <div class="col-lg-4 col-sm-6 mb-4">
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" data-bs-toggle="modal" href="#{{ m.id }}">
-                                    <img class="img-fluid" loading=lazy src="{{ m.img }}" alt="Media Picture" />
-                                </a>
-                                <!--<div class="portfolio-caption">
-                                    <div class="portfolio-caption-heading">{{ m.name }}</div>
-                                    <div class="portfolio-caption-subheading text-muted">{{ m.subheader }}</div>
-                                </div>-->
-                            </div>
-                        </div>
-                    {%- endfor %}
-                </div>
-            </div>
-        </section>
-        <!-- 
-        
-        Team
+            Play
 
-        -->
-        <section class="page-section" id="team">
-            <div class="container">
-                <h2 class="section-heading text-uppercase text-center">The Reborn Team</h2>
-                <h3 class="section-subheading text-muted text-center"></h3>
-                <div class="sub-section">
+            -->
+            <section class="page-section" id="play">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="section-heading text-uppercase">Play</h2>
+                    </div>
+                    <ol>
+                        <h3 class="section-heading">
+                            <li>
+                                Install <i>Source SDK Base 2013 Multiplayer</i> by <a href="steam://install/243750" target="_blank">clicking here</a>
+                            </li>
+                        </h3>
+                        <p class="text-muted">Alternatively, install it manually through Steam by going to Library -> Tools.</p>
+                        <h3 class="section-heading">
+                            <li>Download the game</li>
+                        </h3>
+                        <p class="text-muted">Make sure you install it in your <strong>Steam installation directory</strong>! Source mods cannot be installed in other library folders!</p>
+                    </ol>
+                    <div class="row text-center mt-5">
+                        {% for dl in downloads %}
+                                <div class="col-md-4">
+                                    <a href="{{ dl.href }}" target="_blank">
+                                        <span class="fa-stack fa-4x">
+                                            <i class="fas fa-circle fa-stack-2x"></i>
+                                            <i class="fab {{ dl.icon }} fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                    <h4 class="my-3">{{ dl.name }}</h4>
+                                    <p class="text-muted">{{ dl.description }}</p>
+                                </div>
+                        {% endfor %}
+                    </div>
+                    <ol start="3">
+                        <h3 class="section-heading">
+                            <li>
+                                <a href="{{ socialLinks[0].href }}" target="_blank">Join our Discord group</a> to stay up to date with the community, news, and coordinated play sessions
+                            </li>
+                        </h3>
+                    </ol>
+                </div>
+            </section>
+            <!--
+            
+            Media
+            
+            -->
+            <section class="page-section" id="media">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="section-heading text-uppercase">Media</h2>
+                    </div>
                     <div class="row">
-                        {%- for member in developers | sort %}
-                            <div class="col-sm-4">
-                                <div class="team-member">
-                                    <!--<img class="mx-auto rounded-circle" src="{{ member.img }}" alt="Team member image" />-->
-                                    <h4>{{ member.name }}</h4>
-                                    <p class="text-muted">{{ member.title }}</p>
+                        {%- for m in media %}
+                            <div class="col-lg-4 col-sm-6 mb-4">
+                                <div class="portfolio-item">
+                                    <a class="portfolio-link" data-bs-toggle="modal" href="#{{ m.id }}">
+                                        <img class="img-fluid" loading=lazy src="{{ m.img }}" alt="Media Picture" />
+                                    </a>
+                                    <!--<div class="portfolio-caption">
+                                        <div class="portfolio-caption-heading">{{ m.name }}</div>
+                                        <div class="portfolio-caption-subheading text-muted">{{ m.subheader }}</div>
+                                    </div>-->
                                 </div>
                             </div>
                         {%- endfor %}
                     </div>
                 </div>
-                <div class="sub-section">
-                    <h3 class="text-center text-uppercase">The Contributors</h3>
-                    <h3 class="section-subheading text-muted text-center">The people who have directly contributed to the project. It wouldn't have been possible without these guys!</h3>
-                    <div class="row">
-                        {% for contributor in contributors | sort %}
-                            <div class="col-sm-3 text-center mb-3">
-                                <h5 class="mb-0">{{ contributor.name }}</h5>
-                                <p class="text-muted">{{ contributor.title }}</p>
-                            </div>
-                        {% endfor %}
+            </section>
+            <!-- 
+            
+            Team
+
+            -->
+            <section class="page-section" id="team">
+                <div class="container">
+                    <h2 class="section-heading text-uppercase text-center">The Reborn Team</h2>
+                    <h3 class="section-subheading text-muted text-center"></h3>
+                    <div class="sub-section">
+                        <div class="row">
+                            {%- for member in developers | sort %}
+                                <div class="col-sm-4">
+                                    <div class="team-member">
+                                        <!--<img class="mx-auto rounded-circle" src="{{ member.img }}" alt="Team member image" />-->
+                                        <h4>{{ member.name }}</h4>
+                                        <p class="text-muted">{{ member.title }}</p>
+                                    </div>
+                                </div>
+                            {%- endfor %}
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h3 class="text-center text-uppercase">The Contributors</h3>
+                        <h3 class="section-subheading text-muted text-center">The people who have directly contributed to the project. It wouldn't have been possible without these guys!</h3>
+                        <div class="row">
+                            {% for contributor in contributors | sort %}
+                                <div class="col-sm-3 text-center mb-3">
+                                    <h5 class="mb-0">{{ contributor.name }}</h5>
+                                    <p class="text-muted">{{ contributor.title }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h4 class="text-center text-uppercase">Thanks To</h4>
+                        <h3 class="section-subheading text-muted text-center">The people who have helped indirectly, released their work to the public or are just plain cool.</h3>
+                        <div class="mx-4">
+                            {% set comma = joiner() %}
+                            {%- for person in thanksTo | sort -%}
+                                {{ comma() }} {{ person }}
+                            {%- endfor -%}
+                        </div>
                     </div>
                 </div>
-                <div class="sub-section">
-                    <h4 class="text-center text-uppercase">Thanks To</h4>
-                    <h3 class="section-subheading text-muted text-center">The people who have helped indirectly, released their work to the public or are just plain cool.</h3>
-                    <div class="mx-4">
-                        {% set comma = joiner() %}
-                        {%- for person in thanksTo | sort -%}
-                            {{ comma() }} {{ person }}
-                        {%- endfor -%}
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
         <!--
         
         Footer
